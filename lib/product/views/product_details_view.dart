@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:home_credit_clients/common/components/back_button.dart';
+import 'package:home_credit_clients/common/components/shop_card.dart';
 import 'package:home_credit_clients/common/constants/colors.dart';
 
 class ProductDetailsView extends StatefulWidget {
@@ -55,6 +56,30 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       child: Text("Кофемашина Philips EP3241/50",
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.w600))),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                          "Готовьте любимый кофе — эспрессо, кофе, капучино и латте маккиато — одним нажатием кнопки. Капучинатор LatteGo подарит вам вкусный кофе с нежнейшей молочной пеной. Он устанавливается и очищается всего за 15 секунд",
+                          style: TextStyle(
+                            fontSize: 16,
+                          ))),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text("Продавец",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w600))),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: ShopCard())
                 ],
               )),
           Container(
