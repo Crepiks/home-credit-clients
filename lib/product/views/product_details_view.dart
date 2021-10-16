@@ -47,8 +47,10 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                             color: AppColors.white,
                             borderRadius: BorderRadius.all(Radius.circular(14)),
                             image: DecorationImage(
+                                alignment: Alignment.center,
                                 image: AssetImage(
-                                    'assets/images/coffee-machine.jpeg')))),
+                                    'assets/images/coffee-machine.jpeg'),
+                                scale: 4))),
                   ),
                   const SizedBox(
                     height: 20,
@@ -57,7 +59,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text("Кофемашина Philips EP3241/50",
                           style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w600))),
+                              fontSize: 24, fontWeight: FontWeight.w600))),
                   const SizedBox(
                     height: 10,
                   ),
@@ -75,7 +77,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text("Продавец",
                           style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w600))),
+                              fontSize: 20, fontWeight: FontWeight.w600))),
                   const SizedBox(
                     height: 20,
                   ),
@@ -89,7 +91,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text("Способ покупки",
                           style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w600))),
+                              fontSize: 20, fontWeight: FontWeight.w600))),
                   const SizedBox(
                     height: 20,
                   ),
@@ -144,8 +146,8 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                             FontAwesomeIcons.creditCard,
                             size: 18,
                           ),
-                          SizedBox(width: 6),
-                          Text("Оформить в кредит")
+                          SizedBox(width: 10),
+                          Text("Приобрести")
                         ],
                       )),
                 ),
