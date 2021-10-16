@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:home_credit_clients/common/colors.dart';
 import 'package:home_credit_clients/home/views/components/header.dart';
 import 'package:home_credit_clients/home/views/components/shop_card.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:home_credit_clients/product/views/product_details_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -18,53 +19,37 @@ class HomeView extends StatelessWidget {
             child: Header(),
           ),
           const SizedBox(height: 20),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: GestureDetector(
-                onTap: () async {
-                  String barcodeScanRes =
-                      await FlutterBarcodeScanner.scanBarcode(
-                          'ff6666', "Отмена", true, ScanMode.BARCODE);
-                },
-                child: const ShopCard(),
-              )),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: ShopCard(),
-          ),
+          _buildShopCard(context),
         ],
       ),
     );
+  }
+
+  _buildShopCard(BuildContext context) {
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                CupertinoPageRoute(
+                    builder: (context) => const ProductDetailsView()));
+          },
+          child: const ShopCard(),
+        ));
   }
 }
