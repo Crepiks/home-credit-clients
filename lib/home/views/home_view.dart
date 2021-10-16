@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:home_credit_clients/common/colors.dart';
+import 'package:home_credit_clients/common/constants/colors.dart';
 import 'package:home_credit_clients/home/views/components/header.dart';
 import 'package:home_credit_clients/home/views/components/shop_card.dart';
 import 'package:home_credit_clients/product/views/product_details_view.dart';

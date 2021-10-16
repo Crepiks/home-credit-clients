@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:home_credit_clients/common/colors.dart';
+import 'package:home_credit_clients/common/constants/colors.dart';
 
 class ShopCard extends StatelessWidget {
   const ShopCard({Key? key}) : super(key: key);
