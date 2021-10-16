@@ -54,7 +54,7 @@ class ProfileActions extends StatelessWidget {
           ProfileActionLink(
             text: "Продвинутая статистика",
             icon: FaIcon(
-              FontAwesomeIcons.lock,
+              FontAwesomeIcons.chartPie,
               size: 20,
               color: AppColors.primary,
             ),

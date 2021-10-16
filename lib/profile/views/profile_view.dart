@@ -13,7 +13,7 @@ class ProfileView extends StatelessWidget {
     return Scaffold(
         backgroundColor: AppColors.background,
         body: Padding(
-            padding: const EdgeInsets.only(right: 20, left: 20, bottom: 100),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ListView(
               children: [
                 Row(
