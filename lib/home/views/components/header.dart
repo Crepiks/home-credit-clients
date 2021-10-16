@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:home_credit_clients/profile/views/profile_view.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -28,13 +30,21 @@ class Header extends StatelessWidget {
               )
             ],
           ),
-          Container(
-              width: 50,
-              height: 50,
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/avatar.png')))),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                      builder: (context) => const ProfileView()));
+            },
+            child: Container(
+                width: 50,
+                height: 50,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/avatar.png')))),
+          )
         ],
       ),
     );
