@@ -90,7 +90,6 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: CupertinoButton(
                   onPressed: () {
-                    print("Credit button pressed");
                     Navigator.push(
                         context,
                         CupertinoPageRoute(
