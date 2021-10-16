@@ -28,7 +28,24 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               child: Row(
                 children: const [AppBackButton()],
               ),
-            )
+            ),
+            const SizedBox(height: 20),
+            Container(
+                width: double.infinity,
+                height: 200,
+                decoration: const BoxDecoration(
+                    color: AppColors.white,
+                    image: DecorationImage(
+                        image:
+                            AssetImage('assets/images/coffee-machine.jpeg')))),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text("Кофемашина Philips EP3241/50",
+                    style:
+                        TextStyle(fontSize: 22, fontWeight: FontWeight.w600)))
           ],
         ));
   }
