@@ -60,10 +60,7 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: GestureDetector(
           onTap: () {
-            Navigator.push(
-                context,
-                CupertinoPageRoute(
-                    builder: (context) => const ProductDetailsView()));
+            _navigateToProductDetailsScreen(context);
           },
           child: const ShopCard(),
         ));
@@ -108,7 +105,9 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           child: CupertinoButton(
                             padding: const EdgeInsets.symmetric(vertical: 20),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             child: const Text(
                               "Нет, закрыть",
                               style: TextStyle(color: AppColors.primary),
@@ -119,7 +118,10 @@ class _HomeViewState extends State<HomeView> {
                     Expanded(
                         child: CupertinoButton(
                       padding: const EdgeInsets.symmetric(vertical: 20),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                        _navigateToProductDetailsScreen(context);
+                      },
                       borderRadius: const BorderRadius.all(Radius.circular(14)),
                       color: AppColors.primary,
                       child: const Text("Да, выбрать"),
@@ -128,5 +130,10 @@ class _HomeViewState extends State<HomeView> {
                 )
               ],
             )));
+  }
+
+  _navigateToProductDetailsScreen(BuildContext context) {
+    Navigator.push(context,
+        CupertinoPageRoute(builder: (context) => const ProductDetailsView()));
   }
 }
