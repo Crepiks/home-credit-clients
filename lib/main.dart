@@ -9,7 +9,7 @@ void main() => {
         ),
         initialRoute: "/",
         routes: {
-          "/": (context) => HomeView(),
+          "/": (context) => const HomeView(),
         },
       ))
     };
