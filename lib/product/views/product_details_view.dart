@@ -35,14 +35,18 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Container(
-                      width: double.infinity,
-                      height: 200,
-                      decoration: const BoxDecoration(
-                          color: AppColors.white,
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/coffee-machine.jpeg')))),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Container(
+                        width: double.infinity,
+                        height: 200,
+                        decoration: const BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(14)),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/coffee-machine.jpeg')))),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
