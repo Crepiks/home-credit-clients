@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:home_credit_clients/common/components/back_button.dart';
 import 'package:home_credit_clients/common/components/shop_card.dart';
 import 'package:home_credit_clients/common/constants/colors.dart';
+import 'package:home_credit_clients/product/views/product_purchase_confirmation_view.dart';
 
 class ProductDetailsView extends StatefulWidget {
   const ProductDetailsView({Key? key}) : super(key: key);
@@ -90,6 +91,11 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                 child: CupertinoButton(
                   onPressed: () {
                     print("Credit button pressed");
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) =>
+                                const ProductPurchaseConfirmationView()));
                   },
                   borderRadius: const BorderRadius.all(Radius.circular(14)),
                   color: AppColors.primary,
