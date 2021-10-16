@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:home_credit_clients/common/components/back_button.dart';
 import 'package:home_credit_clients/common/components/shop_card.dart';
 import 'package:home_credit_clients/common/constants/colors.dart';
+import 'package:home_credit_clients/product/views/components/payments_method_card.dart';
 import 'package:home_credit_clients/product/views/product_purchase_confirmation_view.dart';
 
 class ProductDetailsView extends StatefulWidget {
@@ -80,7 +81,43 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                   ),
                   const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: ShopCard())
+                      child: ShopCard()),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Text("Способ покупки",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w600))),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: PaymentsMethodCard(
+                          text: "Рассрочка на 3 месяца", selected: true)),
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: PaymentsMethodCard(
+                        text: "Рассрочка на 6 месяцев",
+                        selected: false,
+                      )),
+                  const SizedBox(
+                    height: 14,
+                  ),
+                  const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: PaymentsMethodCard(
+                        text: "Рассрочка на 12 месяцев",
+                        selected: false,
+                      )),
+                  const SizedBox(
+                    height: 80,
+                  )
                 ],
               )),
           Container(
