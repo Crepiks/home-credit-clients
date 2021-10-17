@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:home_credit_clients/common/components/back_button.dart';
 import 'package:home_credit_clients/common/constants/colors.dart';
+import 'package:home_credit_clients/home/views/components/notifications_button.dart';
 import './components/profile_actions.dart';
 import './components/profile_card.dart';
 
@@ -17,7 +18,8 @@ class ProfileView extends StatelessWidget {
             child: ListView(
               children: [
                 Row(
-                  children: const [AppBackButton()],
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [AppBackButton(), NotificationsButton()],
                 ),
                 const SizedBox(
                   height: 14,
