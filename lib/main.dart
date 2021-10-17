@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_credit_clients/home/views/home_view.dart';
+import 'package:home_credit_clients/onboarding/views/onboarding_view.dart';
 
 void main() => {
       runApp(MaterialApp(
@@ -9,7 +9,7 @@ void main() => {
         ),
         initialRoute: "/",
         routes: {
-          "/": (context) => const HomeView(),
+          "/": (context) => const OnboardingView(),
         },
       ))
     };
