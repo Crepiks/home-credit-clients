@@ -21,9 +21,9 @@ class ProductDetailsView extends StatefulWidget {
 }
 
 class _ProductDetailsViewState extends State<ProductDetailsView> {
-  bool _contentVisible = false;
-  bool _contentLoading = false;
-  String _barcode = '';
+  final bool _contentVisible = true;
+  bool _contentLoading = true;
+  final String _barcode = '190198705488';
 
   @override
   void initState() {
@@ -43,17 +43,6 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
   }
 
   _setup(BuildContext context) async {
-    final barcode = await _scanProductBarcode(context);
-    if (barcode == '-1') {
-      return _navigateBack(context);
-    }
-
-    setState(() {
-      _barcode = barcode;
-      _contentVisible = true;
-      _contentLoading = true;
-    });
-
     Timer(const Duration(seconds: 2), () {
       setState(() {
         _contentLoading = false;
