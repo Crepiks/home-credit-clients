@@ -101,8 +101,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         borderRadius: BorderRadius.all(Radius.circular(14)),
                         image: DecorationImage(
                             alignment: Alignment.center,
-                            image:
-                                AssetImage('assets/images/coffee-machine.jpeg'),
+                            image: AssetImage('assets/images/macbook.jpeg'),
                             scale: 4))),
               ),
               const SizedBox(
@@ -110,7 +109,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               ),
               const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text("Кофемашина Philips EP3241/50",
+                  child: Text("Ноутбук Apple MacBook Air 2020 13.3 MGN63 серый",
                       style: TextStyle(
                           fontSize: 24, fontWeight: FontWeight.w600))),
               const SizedBox(
@@ -119,7 +118,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
-                      "Готовьте любимый кофе — эспрессо, кофе, капучино и латте маккиато — одним нажатием кнопки. Капучинатор LatteGo подарит вам вкусный кофе с нежнейшей молочной пеной. Он устанавливается и очищается всего за 15 секунд",
+                      "- диагональ экрана: 13.3 дюйм\n- разрешение экрана: 2560x1600\n- процессор: Apple M1\n- размер оперативной памяти: 8 ГБ\n- тип жесткого диска: SSD\n- общий объем накопителей: 256 ГБ",
                       style: TextStyle(
                         fontSize: 16,
                       ))),
