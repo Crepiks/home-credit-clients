@@ -8,6 +8,7 @@ import 'package:home_credit_clients/common/components/back_button.dart';
 import 'package:home_credit_clients/common/components/loading_indicator.dart';
 import 'package:home_credit_clients/common/components/shop_card.dart';
 import 'package:home_credit_clients/common/constants/colors.dart';
+import 'package:home_credit_clients/common/models/shop_model.dart';
 import 'package:home_credit_clients/home/views/home_view.dart';
 import 'package:home_credit_clients/product/views/components/payments_method_card.dart';
 import 'package:home_credit_clients/product/views/product_purchase_confirmation_view.dart';
@@ -135,7 +136,15 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
               ),
               const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: ShopCard()),
+                  child: ShopCard(
+                    shop: ShopModel(
+                        name: "Магазин Sulpak",
+                        address: 'ул. Сатпаева, 90 (ТРЦ АДК)',
+                        rating: 4.8,
+                        distance: 0.1,
+                        productQuantity: 245,
+                        image: 'sulpak-logo.jpeg'),
+                  )),
               const SizedBox(
                 height: 40,
               ),

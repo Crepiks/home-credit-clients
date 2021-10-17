@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:home_credit_clients/common/constants/colors.dart';
+import 'package:home_credit_clients/common/models/shop_model.dart';
+import 'package:home_credit_clients/data/shops.dart';
 import 'package:home_credit_clients/home/views/components/header.dart';
 import 'package:home_credit_clients/common/components/shop_card.dart';
 import 'package:home_credit_clients/product/views/product_details_view.dart';
@@ -34,35 +36,27 @@ class _HomeViewState extends State<HomeView> {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Header(),
           ),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
-          const SizedBox(height: 20),
-          _buildShopCard(context),
+          ..._buildShopCards(context)
         ],
       ),
     );
   }
 
-  _buildShopCard(BuildContext context) {
+  List<Widget> _buildShopCards(BuildContext context) {
+    return shops
+        .map((ShopModel shop) => _buildShopCard(context: context, shop: shop))
+        .toList();
+  }
+
+  Widget _buildShopCard(
+      {required BuildContext context, required ShopModel shop}) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
         child: GestureDetector(
           onTap: () {
             _navigateToProductDetailsScreen(context);
           },
-          child: const ShopCard(),
+          child: ShopCard(shop: shop),
         ));
   }
 
@@ -91,7 +85,15 @@ class _HomeViewState extends State<HomeView> {
                     SizedBox(
                       height: 14,
                     ),
-                    ShopCard(),
+                    ShopCard(
+                      shop: ShopModel(
+                          name: "Магазин Sulpak",
+                          address: 'ул. Сатпаева, 90 (ТРЦ АДК)',
+                          rating: 4.8,
+                          distance: 0.1,
+                          productQuantity: 245,
+                          image: 'sulpak-logo.jpeg'),
+                    ),
                   ],
                 ),
                 Row(
