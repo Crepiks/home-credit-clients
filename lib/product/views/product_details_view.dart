@@ -21,8 +21,9 @@ class ProductDetailsView extends StatefulWidget {
 }
 
 class _ProductDetailsViewState extends State<ProductDetailsView> {
-  bool contentVisible = false;
-  bool contentLoading = false;
+  bool _contentVisible = false;
+  bool _contentLoading = false;
+  String _barcode = '';
 
   @override
   void initState() {
@@ -34,8 +35,8 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.background,
-        body: contentVisible
-            ? contentLoading
+        body: _contentVisible
+            ? _contentLoading
                 ? _buildLoadingIndicator()
                 : _buildProductDetails()
             : Container());
@@ -48,13 +49,14 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
     }
 
     setState(() {
-      contentVisible = true;
-      contentLoading = true;
+      _barcode = barcode;
+      _contentVisible = true;
+      _contentLoading = true;
     });
 
     Timer(const Duration(seconds: 2), () {
       setState(() {
-        contentLoading = false;
+        _contentLoading = false;
       });
     });
   }
@@ -193,8 +195,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                 Navigator.push(
                     context,
                     CupertinoPageRoute(
-                        builder: (context) =>
-                            const ProductPurchaseConfirmationView()));
+                        builder: (context) => ProductPurchaseConfirmationView(
+                              barcode: _barcode,
+                            )));
               },
               borderRadius: const BorderRadius.all(Radius.circular(14)),
               color: AppColors.primary,

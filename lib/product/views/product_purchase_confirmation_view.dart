@@ -6,7 +6,10 @@ import 'package:home_credit_clients/home/views/home_view.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class ProductPurchaseConfirmationView extends StatefulWidget {
-  const ProductPurchaseConfirmationView({Key? key}) : super(key: key);
+  final String barcode;
+
+  const ProductPurchaseConfirmationView({Key? key, required this.barcode})
+      : super(key: key);
 
   @override
   _ProductPurchaseConfirmationViewState createState() =>
@@ -26,7 +29,7 @@ class _ProductPurchaseConfirmationViewState
               Column(
                 children: [
                   QrImage(
-                    data: "1234567890",
+                    data: widget.barcode,
                     version: QrVersions.auto,
                     size: 200,
                   ),
